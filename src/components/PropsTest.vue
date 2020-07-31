@@ -5,14 +5,27 @@
 			<legend>参数框</legend>
 			<ul>
 				<li>Name:{{name}}</li>
-				<!-- <li>Age:{{age}}</li> -->
-				<!-- <li>Sex:{{sex}}</li> -->
 			</ul>
 		</fieldset>
 	</div>
 </template>
 <script>
 export default {
-	props: ['name']
+	props: ['name'],
+	mounted() {
+
+	},
+	beforeRouteEnter(to, from, next) {
+		console.log('触发beforeRouteEnter!')
+		next();
+	},
+	beforeRouteUpdate(to, from, next) {
+		console.log('触发beforeRouteUpdate')
+		next();
+	},
+	beforeRouteLeave(to, from, next) {
+		console.log('触发beforeRouteLeave');
+		next();
+	}
 }
 </script>
