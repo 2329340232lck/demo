@@ -1,10 +1,18 @@
 <!--App.vue-->
 <template>
 	<div id="app">
-		<!-- router-link标签用来指向你要去的路由路径 -->
-		<router-link to="/main">main</router-link> |
-		<router-link to="/about">about</router-link>
-		<img alt="Vue logo" src="./assets/logo.png">
+		<nav>
+			<!-- router-link标签用来指向你要去的路由路径 -->
+			<router-link to="/main">main</router-link>
+			<router-link to="/about">about</router-link>
+			<router-link :to="`/param/Ankol`">param</router-link>
+			<!-- query方式传递的为一个对象 -->
+			<router-link :to="{path:'/query',query:{name:'Ankol',sex:'男',age:18}}">query</router-link>
+		</nav>
+		<fieldset>
+			<legend>props传递</legend>
+			<router-link to="/props/you">/props/you</router-link>
+		</fieldset>
 		<!-- 路由出口，对应的组件渲染在这里！ -->
 		<router-view></router-view>
 		<div>
@@ -29,9 +37,10 @@ export default {
 		return {
 			push: undefined,
 			replace: undefined,
-			// go: undefined,
+			userName: undefined,
 		}
 	},
+
 	methods: {
 		doPush() {
 			//push方法像浏览器压入一个新的会话历史,与window.history Api类似,官方也是模仿historyAPI设计的
@@ -56,6 +65,11 @@ export default {
 </script>
 <style lang="scss">
 #app {
+	nav {
+		a {
+			margin: 0 5px;
+		}
+	}
 	button {
 		text-transform: uppercase;
 	}
