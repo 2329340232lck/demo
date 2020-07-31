@@ -23,7 +23,7 @@ const router = new Router({
     {
       path: '/query',
       component: () => import('./components/QueryTest.vue'),
-      beforeEach: (to, from, next) => alert('进入query页面!'),
+      beforeEnter: (to, from, next) => {alert('进入query页面!');next()},
     }, //query方式
     //props解构传递
     { path: '/props/:name', component: () => import('./components/PropsTest.vue'), props: true }, // 通过 route.params 传递至props
