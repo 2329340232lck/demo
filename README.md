@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # VUE ROUTER 的使用
 
 ## 1. Vue-Router的基本使用
@@ -542,10 +541,3 @@ beforeRouteEnter (to, from, next) {
 
 查看官网：https://router.vuejs.org/zh/api/
 
-=======
-# demo
-This is a repository made in the learning process, and there are a lot of demos I made in it!
-
-# router
-我的一个vueRouter学习Demo.
->>>>>>> 5ee14b0b896edb808972720f8a046a5a92ef43ce
